@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .header {
+            background-color: #D13540;
+            border-radius: 12px;
+            color: #D13540;
+            padding: 10px;
+            margin: 10px;
+        }
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+        .website-btn {
+            background-color: white;
+            color: #D13540;
+            height: 30px;
+            padding: 0 12px;
+        }
+        .websites-btn {
+            background-color: #0282FF;
+            color: white;
+            height: 30px;
+            padding: 0 12px;
+        }
+        .widget {
+            background-color: white;
+            border: 1px solid #D9D9D9;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .search-input {
+            background-color: #D9D9D9;
+            border-radius: 50px;
+        }
+        .search-btn {
+            background-color: #0282FF;
+            border-radius: 50px;
+            color: white;
+        }
+        .timetable-header {
+            background-color: #D13540;
+            border-radius: 12px;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .timetable {
+            padding: 10px;
+        }
+        .time-widget {
+            background-color: #D9D9D9;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body><center>
+    <header class="header d-flex justify-content-between">
+        <img src="logo.png" alt="Logo" class="logo">
+        <a href="https://www.highcrestacademy.org.uk" class="btn website-btn align-self-center">Website</a>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 widget">
+                <center><br>
+                <a href="https://www.google.com">
+                    <img src="google.png" alt="Google" class="img-fluid mx-auto d-block">
+                </a>
+                <form action="https://www.google.com/search" method="get" target="_blank" class="mt-3">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control search-input" placeholder="Search Google">
+                        <div class="input-group-append">
+                            <button class="btn search-btn" type="submit">⌕</button>
+                        </div>
+                    </div>
+                </center>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-12 widget" style="background-color: #D13540; color: white; text-align: center;">
+                <h3 style="font-weight: bold; padding: 10px;">WELCOME TO THE HIGHCREST ACADEMY INTRANET</h3>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 widget">
+                <div class="timetable-header">TIMETABLE</div>
+                <div class="timetable" id="timetable">
+                    <!-- Timetable will be populated here -->
+                </div>
+                <div class="time-widget" id="time-widget">
+                    <!-- Current time will be displayed here -->
+                </div>
+            </div>
+            
+            <script>
+// Define the timetable
+var timetable = [
+    { start: '08:30', end: '08:49', event: 'AM Form' },
+    { start: '08:50', end: '09:49', event: 'Period 1' },
+    { start: '09:50', end: '10:49', event: 'Period 2' },
+    { start: '10:50', end: '11:09', event: 'Break' },
+    { start: '11:10', end: '12:09', event: 'Period 3' },
+    { start: '12:10', end: '12:49', event: 'Lunch' },
+    { start: '12:50', end: '13:49', event: 'Period 4' },
+    { start: '13:50', end: '14:49', event: 'Period 5' },
+    { start: '14:50', end: '14:59', event: 'PM Form' },
+    { start: '15:00', end: '08:29', event: 'After School' }
+];
+
+// Function to update the time and current period
+function updateTime() {
+    // Get the current time
+    var now = new Date();
+    var currentTime = now.getHours() + ':' + (now.getMinutes()<10?'0':'') + now.getMinutes();
+
+    // Display the current time
+    document.getElementById('time-widget').textContent = 'Time: ' + currentTime;
+
+    // Determine the current period
+    var currentPeriod = 'Current Period: ';
+    for (var i = 0; i < timetable.length; i++) {
+        if (currentTime >= timetable[i].start && currentTime <= timetable[i].end) {
+            currentPeriod += timetable[i].event;
+            break;
+        }
+    }
+    document.getElementById('timetable').textContent = currentPeriod;
+}
+
+// Update the time and current period every minute
+setInterval(updateTime, 60000);
+
+// Call updateTime immediately to populate the time and period
+updateTime();
+
+            </script>
+            
+            
+            <!-- Add more widgets here -->
+        </div>
+    </center>
+
+        
+        <!-- Add more rows here -->
+    </div>
+
+    
+</div>
+
+<div class="row">
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 1 content goes here -->
+            <div class="row">
+                <div class="col-4">
+                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                        <img src="g4s.png" alt="G4S" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-between">
+                    <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                        <h6 class="text-center">Go4Schools</h6>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-around">
+                        <a href="https://www.go4schools.com/students"
+                            <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">STUDENT</button><br>
+                    </a>
+                        <a href="https://www.go4schools.com/schools"
+                            <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">STAFF</button><br>
+                    </a>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 2 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="office.png" alt="Office" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Office</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.office.com/login"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 3 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="seneca.png" alt="Seneca" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Seneca Learning</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://senecalearning.com/en-GB/"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 4 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="kahoot.png" alt="Kahoot" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Kahoot</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.kahoot.it"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 5 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="kerboodle.png" alt="Kerboodle" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Kerboodle</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.kerboodle.com/users/login"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 6 content goes here -->
+            <div class="row">
+                <div class="col-4">
+                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                        <img src="mathswatch.png" alt="MathsWatch" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-between">
+                    <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                        <h6 class="text-center">MathsWatch</h6>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-around">
+                        <a href="http://vle.mathswatch.co.uk/vle"
+                            <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 7 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="unifrog.png" alt="Unifrog" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Unifrog</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.unifrog.org/"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 8 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="active learn.png" alt="Active Learn" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Active Learn</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.pearsonactivelearn.com/app/home"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 9 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="fusion360.png" alt="Fusion360" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Fusion360</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.autodesk.co.uk/products/fusion-360"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 10 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="placeholder1.png" alt="Placeholder 1" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Placeholder 1</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.highcrestacademy.org.uk"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 11 content goes here -->
+            <div class="row">
+                <div class="col-4">
+                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                        <img src="sparx.png" alt="Sparx" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-between">
+                    <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                        <h6 class="text-center">Sparx Maths</h6>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-around">
+                        <a href="https://sparxmaths.com/"
+                            <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 12 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="drfrost.png" alt="Dr Frost" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Dr Frost Maths</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.drfrostmaths.com/"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 13 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="Renaissance.png" alt="Renaissance" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Renaissance</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.renaissance.com/"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 14 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="tes.png" alt="TES" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">TES</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.tes.com"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
+        <!-- Widget 15 content goes here -->
+        <div class="row">
+            <div class="col-4">
+                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <img src="placeholder2.png" alt="Placeholder 2" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <div style="border-radius: 12px; background-color: #D9D9D9; padding: 1px;">
+                    <h6 class="text-center">Placeholder 2</h6>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <a href="https://www.highcrestacademy.org.uk"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+</body>
+</html>
