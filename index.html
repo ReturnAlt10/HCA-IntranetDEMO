@@ -124,7 +124,7 @@ function updateTime() {
     document.getElementById('time-widget').textContent = 'Time: ' + currentTime;
 
     // Determine the current period
-    var currentPeriod = 'Current Period: ';
+    var currentPeriod = 'Current: ';
     for (var i = 0; i < timetable.length; i++) {
         if (currentTime >= timetable[i].start && currentTime <= timetable[i].end) {
             currentPeriod += timetable[i].event;
