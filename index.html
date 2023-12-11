@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Highcrest Academy - Intranet</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <style>
         .header {
@@ -13,22 +14,33 @@
             color: #D13540;
             padding: 10px;
             margin: 10px;
+            font-family: "Poppins", sans-serif;
         }
         .logo {
             height: 70px;
             width: auto;
+        }
+        .websites-btn {
+            background-color: #D13540;
+            color: white;
+            height: 30px;
+            padding: 0 12px;
+            font-family: "Poppins", sans-serif;
+
         }
         .website-btn {
             background-color: white;
             color: #D13540;
             height: 30px;
             padding: 0 12px;
+            font-family: "Poppins", sans-serif;
+
         }
-        .websites-btn {
-            background-color: #0282FF;
-            color: white;
-            height: 30px;
-            padding: 0 12px;
+        .websites-btn:hover {
+            background-color: white; /* change to your desired color */
+            color: #D13540; /* change to your desired color */
+            font-family: "Poppins", sans-serif;
+
         }
         .widget {
             background-color: white;
@@ -36,15 +48,21 @@
             border-radius: 12px;
             padding: 10px;
             margin: 10px;
+            font-family: "Poppins", sans-serif;
+
         }
         .search-input {
             background-color: #D9D9D9;
             border-radius: 50px;
+            font-family: "Poppins", sans-serif;
+
         }
         .search-btn {
             background-color: #0282FF;
             border-radius: 50px;
             color: white;
+            font-family: "Poppins", sans-serif;
+
         }
         .timetable-header {
             background-color: #D13540;
@@ -53,25 +71,36 @@
             padding: 10px;
             text-align: center;
             font-weight: bold;
+            font-family: "Poppins", sans-serif;
+
         }
         .timetable {
             padding: 10px;
+            font-family: "Poppins", sans-serif;
+
         }
         .time-widget {
             background-color: #D9D9D9;
             padding: 10px;
             margin: 10px;
+            font-family: "Poppins", sans-serif;
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #333333;
+            color: white;
         }
     </style>
 </head>
 <body><center>
     <header class="header d-flex justify-content-between">
         <img src="logo.png" alt="Logo" class="logo">
-        <a href="https://www.highcrestacademy.org.uk" class="btn website-btn align-self-center">Website</a>
+        <a href="https://www.highcrestacademy.org.uk" class="btn website-btn align-self-center" style="color:#D13540; background-color: white;">Website</a>
     </header>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 widget">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 widget mx-auto mb-3">
                 <center><br>
                 <a href="https://www.google.com">
                     <img src="google.png" alt="Google" class="img-fluid mx-auto d-block">
@@ -86,17 +115,18 @@
                 </center>
                 </form>
             </div>
+            <br>
 
-            <div class="col-lg-3 col-md-3 col-sm-12 widget" style="background-color: #D13540; color: white; text-align: center;">
-                <h3 style="font-weight: bold; padding: 10px;">WELCOME TO THE HIGHCREST ACADEMY INTRANET</h3>
+            <div class="col-lg-4 col-md-6 col-sm-12 widget mx-auto mb-3" style="background-color: #D13540; color: white; text-align: center;">
+                <br><h3 style="font-weight: bold; padding: 10px;">WELCOME TO THE HIGHCREST ACADEMY INTRANET</h3>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 widget">
+            <div class="col-lg-4 col-md-6 col-sm-12 widget mx-auto mb-3">
                 <div class="timetable-header">TIMETABLE</div>
                 <div class="timetable" id="timetable">
-                    <!-- Timetable will be populated here -->
+                    <!-- Timetable here -->
                 </div>
                 <div class="time-widget" id="time-widget">
-                    <!-- Current time will be displayed here -->
+                    <!-- Current time here -->
                 </div>
             </div>
             
@@ -108,8 +138,8 @@ var timetable = [
     { start: '09:50', end: '10:49', event: 'Period 2' },
     { start: '10:50', end: '11:09', event: 'Break' },
     { start: '11:10', end: '12:09', event: 'Period 3' },
-    { start: '12:10', end: '12:49', event: 'Lunch' },
-    { start: '12:50', end: '13:49', event: 'Period 4' },
+    { start: '12:10', end: '13:09', event: 'Period 4' },
+    { start: '13:10', end: '13:49', event: 'Lunch' },
     { start: '13:50', end: '14:49', event: 'Period 5' },
     { start: '14:50', end: '14:59', event: 'PM Form' },
     { start: '15:00', end: '08:29', event: 'After School' }
@@ -157,10 +187,10 @@ updateTime();
 
 <div class="row">
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 1 content goes here -->
+        <!-- Widget 1 -->
             <div class="row">
                 <div class="col-4">
-                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                         <img src="g4s.png" alt="G4S" class="img-fluid">
                     </div>
                 </div>
@@ -184,10 +214,10 @@ updateTime();
         
         
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 2 content goes here -->
+        <!-- Widget 2 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="office.png" alt="Office" class="img-fluid">
                 </div>
             </div>
@@ -206,10 +236,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 3 content goes here -->
+        <!-- Widget 3 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="seneca.png" alt="Seneca" class="img-fluid">
                 </div>
             </div>
@@ -228,10 +258,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 4 content goes here -->
+        <!-- Widget 4 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="kahoot.png" alt="Kahoot" class="img-fluid">
                 </div>
             </div>
@@ -243,17 +273,20 @@ updateTime();
 
                 <div class="d-flex justify-content-around">
                     <a href="https://www.kahoot.it"
-                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">VISIT</button><br>
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">PLAY</button><br>
+                    </a>
+                    <a href="https://www.kahoot.com"
+                        <button class="btn btn-sm" style="background-color: #0282FF; color: white; border-radius: 9px; padding: 0 5px;">WEBSITE</button><br>
                     </a>
                     </div>
             </div>
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 5 content goes here -->
+        <!-- Widget 5 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="kerboodle.png" alt="Kerboodle" class="img-fluid">
                 </div>
             </div>
@@ -276,10 +309,10 @@ updateTime();
 
 <div class="row">
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 6 content goes here -->
+        <!-- Widget 6 -->
             <div class="row">
                 <div class="col-4">
-                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                         <img src="mathswatch.png" alt="MathsWatch" class="img-fluid">
                     </div>
                 </div>
@@ -300,10 +333,10 @@ updateTime();
         
         
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 7 content goes here -->
+        <!-- Widget 7 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="unifrog.png" alt="Unifrog" class="img-fluid">
                 </div>
             </div>
@@ -322,10 +355,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 8 content goes here -->
+        <!-- Widget 8 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="active learn.png" alt="Active Learn" class="img-fluid">
                 </div>
             </div>
@@ -344,10 +377,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 9 content goes here -->
+        <!-- Widget 9 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="fusion360.png" alt="Fusion360" class="img-fluid">
                 </div>
             </div>
@@ -366,10 +399,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 10 content goes here -->
+        <!-- Widget 10 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="esafety.png" alt="Esafety" class="img-fluid">
                 </div>
             </div>
@@ -391,10 +424,10 @@ updateTime();
 
 <div class="row">
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 11 content goes here -->
+        <!-- Widget 11 -->
             <div class="row">
                 <div class="col-4">
-                    <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                    <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                         <img src="sparx.png" alt="Sparx" class="img-fluid">
                     </div>
                 </div>
@@ -415,10 +448,10 @@ updateTime();
         
         
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 12 content goes here -->
+        <!-- Widget 12 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="drfrost.png" alt="Dr Frost" class="img-fluid">
                 </div>
             </div>
@@ -437,11 +470,11 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 13 content goes here -->
+        <!-- Widget 13 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
-                    <img src="Renaissance.png" alt="Renaissance" class="img-fluid">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
+                    <img src="Renaissance.jpg" alt="Renaissance" class="img-fluid">
                 </div>
             </div>
             <div class="col-8 d-flex flex-column justify-content-between">
@@ -459,10 +492,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 14 content goes here -->
+        <!-- Widget 14 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="tes.png" alt="TES" class="img-fluid">
                 </div>
             </div>
@@ -480,10 +513,10 @@ updateTime();
         </div>
     </div>
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-        <!-- Widget 15 content goes here -->
+        <!-- Widget 15 -->
         <div class="row">
             <div class="col-4">
-                <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+                <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                     <img src="elibrary.jpg" alt="Elibrary" class="img-fluid">
                 </div>
             </div>
@@ -504,10 +537,10 @@ updateTime();
 </div>
 <div class="row">
     <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-    <!-- Widget 16 content goes here -->
+    <!-- Widget 16 -->
     <div class="row">
         <div class="col-4">
-            <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+            <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                 <img src="bulletin.png" alt="Bulletin" class="img-fluid">
             </div>
         </div>
@@ -526,10 +559,10 @@ updateTime();
     </div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-12 widget mx-auto">
-    <!-- Widget 17 content goes here -->
+    <!-- Widget 17 -->
     <div class="row">
         <div class="col-4">
-            <div style="border-radius: 0%; overflow: hidden; width: 60px; height: 60px; margin: auto;">
+            <div style="border-radius: 0%; overflow: hidden; width: 80px; height: 80px; margin: auto;">
                 <img src="onedrive.png" alt="Onedrive" class="img-fluid">
             </div>
         </div>
@@ -547,7 +580,14 @@ updateTime();
         </div>
     </div>
 
+</div>
+</div>
 
+
+<footer>
+    <p>The Highcrest Academy
+    <a href="mailto:2020mistryh@highcrestacademy.org.uk"><h6>Credit</h4></a></p>
+</footer>
 
      
 </body>
