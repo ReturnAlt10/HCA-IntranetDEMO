@@ -8,3 +8,8 @@ document.getElementById('mode-toggle').addEventListener('click', function() {
         body.classList.add('light-mode');
     }
 });
+
+$(document).ready(function(){
+    $("#myModal").modal('show');
+  });
+  
