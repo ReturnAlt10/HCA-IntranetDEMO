@@ -119,6 +119,18 @@
             transform: scale(1.1);
             transition: all 0.3s ease-in-out; 
         }
+        .timetable, .time-widget {
+            text-align: center;
+        }
+        .timetable {
+          font-size: 24px;
+        }
+        .time-widget {
+          font-size: 36px;
+        }
+        .timetable {
+          text-transform: uppercase;
+        }
 
     </style>
         <!-- Popup Modal -->
@@ -172,57 +184,15 @@
                 <br><h3 style="font-weight: bold; padding: 10px;">WELCOME TO THE HIGHCREST ACADEMY INTRANET</h3>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 widget-top mx-auto mb-3">
-                <div class="timetable-header">TIMETABLE</div>
+                <!-- Remove the timetable header -->
                 <div class="timetable" id="timetable" style="color: #D13540;">
-                    <!-- Timetable here -->
+                  <!-- Timetable here -->
                 </div>
                 <div class="time-widget" id="time-widget">
-                    <!-- Current time here -->
+                  <!-- Current time here -->
                 </div>
-            </div>
-            
-            <script>
-// Define the timetable
-var timetable = [
-    { start: '08:30', end: '08:49', event: 'AM Form' },
-    { start: '08:50', end: '09:49', event: 'Period 1' },
-    { start: '09:50', end: '10:49', event: 'Period 2' },
-    { start: '10:50', end: '11:09', event: 'Break' },
-    { start: '11:10', end: '12:09', event: 'Period 3' },
-    { start: '12:10', end: '13:09', event: 'Period 4' },
-    { start: '13:10', end: '13:49', event: 'Lunch' },
-    { start: '13:50', end: '14:49', event: 'Period 5' },
-    { start: '14:50', end: '14:59', event: 'PM Form' },
-    { start: '15:00', end: '08:29', event: 'After School' }
-];
-
-// Function to update the time and current period
-function updateTime() {
-    // Get the current time
-    var now = new Date();
-    var currentTime = now.getHours() + ':' + (now.getMinutes()<10?'0':'') + now.getMinutes();
-
-    // Display the current time
-    document.getElementById('time-widget').textContent = 'Time: ' + currentTime;
-
-    // Determine the current period
-    var currentPeriod = 'Current: ';
-    for (var i = 0; i < timetable.length; i++) {
-        if (currentTime >= timetable[i].start && currentTime <= timetable[i].end) {
-            currentPeriod += timetable[i].event;
-            break;
-        }
-    }
-    document.getElementById('timetable').textContent = currentPeriod;
-}
-
-// Update the time and current period every minute
-setInterval(updateTime, 60000);
-
-// Call updateTime immediately to populate the time and period
-updateTime();
-
-            </script>
+              </div>
+              
             
             
             <!-- Add more widgets here on 1st row if needed -->
