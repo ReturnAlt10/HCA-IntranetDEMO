@@ -4,7 +4,7 @@ document.getElementById('mode-toggle').addEventListener('click', function() {
     popup.style.position = 'fixed'; // set the position to fixed
     popup.style.bottom = '10px'; // set the bottom margin to 10px
     popup.style.right = '10px'; // set the right margin to 10px
-    popup.style.backgroundColor = '#1a1a1a'; // set the background color to white
+    popup.style.backgroundColor = 'white'; // set the background color to white
     popup.style.padding = '10px'; // set the padding to 10px
     popup.style.borderRadius = '5px'; // set the border radius to 5px
     if (body.classList.contains('light-mode')) {
